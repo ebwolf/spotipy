@@ -1,9 +1,7 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-scope = "user-library-read"
-
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope="user-library-read"))
 
 results = sp.current_user_saved_tracks()
 for idx, item in enumerate(results['items']):
